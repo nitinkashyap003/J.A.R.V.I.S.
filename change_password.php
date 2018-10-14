@@ -71,11 +71,11 @@ return output;
 //$_SESSION["userId"] = "24";
 if(count($_POST)>0) {
 	//echo $_GET['_password'];
-$result = mysqli_query($con,"SELECT *from teacher WHERE TID='" . $_GET['_id'] . "'");
+$result = mysqli_query($con,"SELECT *from student WHERE sid='" . $_GET['_id'] . "'");
 $row=mysqli_fetch_array($result);
 if($_POST["currentPassword"] == $row["password"]) {
 	//echo 'hi';
-mysqli_query($con,"UPDATE teacher set password='" . $_POST["newPassword"] . "' WHERE TID='" . $_GET['_id'] . "'");
+mysqli_query($con,"UPDATE student set password='" . $_POST["newPassword"] . "' WHERE sid='" . $_GET['_id'] . "'");
 echo $message = "Password Changed";
 } else $message = "Current Password is not correct";
 }
