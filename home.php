@@ -4,15 +4,6 @@ error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-
-
-
-
-
-
 <head>
   <title>J.A.R.V.I.S.</title>
   <meta charset="utf-8">
@@ -78,12 +69,15 @@ error_reporting(0);
     </div>
   </div>
 </nav>
-  
+  <?php 
+$sid = $_REQUEST['sid'];
+$password = $_REQUEST['password'];
+?>
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
     	
-      <p>       <a href="change_password.php?_id=<?php echo $selected_username; ?>&_password=<?php echo $password; ?>">Change Password</a>
+      <p>       <a href="change_password.php?_id=<?php echo $sid; ?>&_password=<?php echo $password; ?>">Change Password</a>
 </p>
       
     </div>
@@ -91,6 +85,8 @@ error_reporting(0);
       <h1>Welcome
 <?php 
 $sid = $_REQUEST['sid'];
+?>
+<?php
 echo " $sid ";
  ?>
       </h1>
