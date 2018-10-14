@@ -72,6 +72,7 @@ error_reporting(0);
   <?php 
 $sid = $_REQUEST['sid'];
 $password = $_REQUEST['password'];
+
 ?>
 <div class="container-fluid text-center">    
   <div class="row content">
@@ -87,7 +88,19 @@ $password = $_REQUEST['password'];
 $sid = $_REQUEST['sid'];
 ?>
 <?php
-echo " $sid ";
+$query = mysqli_query($con,"SELECT * FROM student where sid='".$sid."'");
+//echo " $sid ";
+?>
+<?php
+while($row=mysqli_fetch_array($query))
+{
+
+$email= $row['email'];
+$sid=$row['sid'];
+$password=$row['password'];
+$name=$row['name'];
+echo $name;
+}
  ?>
       </h1>
 
@@ -107,9 +120,7 @@ echo " $sid ";
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
+
 
 </body>
 </html>
